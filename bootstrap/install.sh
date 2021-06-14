@@ -6,3 +6,6 @@ echo "Waiting for the CRDs to exist" ; until [[ $(oc api-resources --api-group a
 
 echo "Installing and configuring the ArgoCD instance"
 oc apply -k ./gitops-instance/base
+
+echo "Setting up ArgoCD projects"
+oc apply -k ./projects/base

@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: roles-and-bindings
+  labels:
+    gitops.ownedBy: cluster-config
+    argocd.argoproj.io/sync-wave: "13"
+spec:
+  destination:
+    namespace: openshift-gitops
+    server: https://kubernetes.default.svc
+  project: cluster-config
+  source:
+    path: manifests/roles-and-bindings/base
+    repoURL: https://github.com/pumphouse-p/shiftops.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
