@@ -1,0 +1,9 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: openshift-gitops
+
+bases:
+  - ../../../argocd/apps/oauth/base
+  - ../../../argocd/apps/resource-locker/base
+  - ../../../argocd/apps/roles-and-bindings/base
