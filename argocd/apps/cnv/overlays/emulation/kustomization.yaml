@@ -2,7 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 bases:
-  - ../base/cnv-app.yaml
+  - ../../base/cnv-app.yaml
 
 patchesJson6902:
   - target:
