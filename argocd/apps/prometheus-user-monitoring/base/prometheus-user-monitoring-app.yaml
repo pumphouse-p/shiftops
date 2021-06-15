@@ -1,10 +1,9 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: file-integrity
+  name: prometheus-user-monitoring
   annotations:
     argocd.argoproj.io/compare-options: IgnoreExtraneous
-    argocd.argoproj.io/sync-wave: "11"
   labels:
     gitops.ownedBy: platform-apps
 spec:
@@ -13,7 +12,7 @@ spec:
     server: https://kubernetes.default.svc
   project: platform-apps
   source:
-    path: manifests/file-integrity/base
+    path: manifests/prometheus-user-monitoring/base
     repoURL: https://github.com/pumphouse-p/shiftops.git
     targetRevision: main
   syncPolicy:
