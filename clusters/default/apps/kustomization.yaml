@@ -8,3 +8,4 @@ bases:
   - ../../../argocd/apps/resource-locker/base
   - ../../../argocd/apps/roles-and-bindings/base
   - ../../../argocd/apps/file-integrity/base
+  - ../../../argocd/apps/prometheus-user-monitoring/base
