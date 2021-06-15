@@ -7,3 +7,4 @@ bases:
   - ../../../argocd/apps/oauth/base
   - ../../../argocd/apps/resource-locker/base
   - ../../../argocd/apps/roles-and-bindings/base
+  - ../../../argocd/apps/file-integrity/base
