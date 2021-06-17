@@ -10,3 +10,4 @@ bases:
   - ../../../argocd/apps/file-integrity/base
   - ../../../argocd/apps/prometheus-user-monitoring/base
   - ../../../argocd/apps/cnv/overlays/emulation
+  - ../../../argocd/apps/openshift-logging/base
