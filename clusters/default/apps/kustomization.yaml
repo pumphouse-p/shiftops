@@ -12,3 +12,4 @@ bases:
   - ../../../argocd/apps/cnv/overlays/emulation
   - ../../../argocd/apps/openshift-logging/base
   - ../../../argocd/apps/odf/base
+  - ../../../argocd/apps/quay/base
