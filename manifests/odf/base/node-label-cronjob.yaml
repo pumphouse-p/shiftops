@@ -1,0 +1,37 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: label-nodes-for-odf
+  generateName: label-nodes-for-odf-
+  namespace: openshift-storage
+  labels:
+    run: label-nodes-for-odf
+  annotations:
+    argocd.argoproj.io/sync-wave: "-4"
+spec:
+  concurrencyPolicy: Forbid
+  schedule: "*/5 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: label-nodes-for-odf
+            image: registry.redhat.io/openshift4/ose-tools-rhel8:v4.6
+            command: 
+              - /bin/bash
+              - -c
+              - |
+                # Exit if there are not at least 3 worker nodes
+                export NUM_WORKERS=$(kubectl get no --no-headers=true -l node-role.kubernetes.io/worker | wc -l)
+                if [ $NUM_WORKERS -lt 3 ]; then
+                  echo "Three (3) worker nodes are needed to successfully deploy ODF"
+                  exit 1
+                fi
+                # We just label every worker node as a potential target for ODF
+                kubectl label node -l node-role.kubernetes.io/worker cluster.ocs.openshift.io/openshift-storage=''
+                exit 0
+          restartPolicy: Never
+          serviceAccount: odf-node-label-sa
+          serviceAccountName: odf-node-label-sa
+          terminationGracePeriodSeconds: 30

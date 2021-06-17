@@ -1,0 +1,31 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: label-nodes-for-cnv
+  generateName: label-nodes-for-cnv-
+  namespace: openshift-cnv
+  labels:
+    run: label-nodes-for-cnv
+  annotations:
+    argocd.argoproj.io/sync-wave: "-4"
+spec:
+  concurrencyPolicy: Forbid
+  schedule: "*/5 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: label-nodes-for-cnv
+            image: registry.redhat.io/openshift4/ose-tools-rhel8:v4.6
+            command: 
+              - /bin/bash
+              - -c
+              - |
+                # We just label every worker node as a potential target for OpenShift Virtualization
+                kubectl label node -l node-role.kubernetes.io/worker devices.kubevirt.io/kvm=""
+                exit 0
+          restartPolicy: Never
+          serviceAccount: cnv-node-label-sa
+          serviceAccountName: cnv-node-label-sa
+          terminationGracePeriodSeconds: 30

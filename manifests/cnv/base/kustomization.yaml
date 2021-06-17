@@ -9,4 +9,4 @@ resources:
   - serviceaccount-node-label.yaml
   - clusterrole-node-label.yaml
   - clusterrolebinding-node-label.yaml
-  - node-label-job.yaml
+  - node-label-cronjob.yaml
