@@ -3,7 +3,7 @@ kind: Job
 metadata:
   name: label-nodes-for-cnv
   generateName: label-nodes-for-cnv-
-  namespace: resource-locker
+  namespace: openshift-cnv
   labels:
     run: label-nodes-for-cnv
   annotations:
@@ -22,6 +22,6 @@ spec:
             kubectl label node -l node-role.kubernetes.io/worker devices.kubevirt.io/kvm=""
             exit 0
       restartPolicy: Never
-      serviceAccount: resource-locker-node-sa
-      serviceAccountName: resource-locker-node-sa
+      serviceAccount: cnv-node-label-sa
+      serviceAccountName: cnv-node-label-sa
       terminationGracePeriodSeconds: 30
