@@ -1,0 +1,20 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: odf-node-label-clusterrole
+  namespace: openshift-storage
+  annotations:
+    argocd.argoproj.io/hook: PreSync
+rules:
+  - apiGroups:
+    - ""
+    resources:
+      - nodes
+      - node
+    verbs:
+      - list
+      - get
+      - watch
+      - create
+      - update
+      - patch

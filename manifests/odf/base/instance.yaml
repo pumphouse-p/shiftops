@@ -1,0 +1,24 @@
+apiVersion: ocs.openshift.io/v1
+kind: StorageCluster
+metadata:
+  namespace: openshift-storage
+  name: ocs-storagecluster
+  annotations:
+    argocd.argoproj.io/sync-wave: "15"
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    uninstall.ocs.openshift.io/cleanup-policy: delete
+    uninstall.ops.openshift.io/mode: graceful
+spec:
+  storageDeviceSets:
+    - count: 1
+      dataPVCTemplate:
+        spec:
+          accessModes:
+            - ReadWriteOnce
+          resources:
+            requests:
+              storage: 512Gi
+          storageClassName: gp2
+          volumeMode: Block
+      name: ocs-deviceset-gp2
+      replica: 3

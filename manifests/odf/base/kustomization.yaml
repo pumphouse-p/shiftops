@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../roles-and-bindings/overlays/odf
+  - node-label-job.yaml
+  - namespace.yaml
+  - operator-group.yaml
+  - subscription.yaml
+  - instance.yaml
