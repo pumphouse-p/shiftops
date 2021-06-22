@@ -13,3 +13,4 @@ bases:
   - ../../../argocd/apps/openshift-logging/base
   - ../../../argocd/apps/odf/base
   - ../../../argocd/apps/quay/base
+  - ../../../argocd/apps/kiali/overlays/stable
