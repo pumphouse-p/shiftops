@@ -5,3 +5,4 @@ namespace: openshift-operators
 
 resources:
   - subscription.yaml
+  - smcp.yaml
