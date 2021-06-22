@@ -14,3 +14,4 @@ bases:
   - ../../../argocd/apps/odf/base
   - ../../../argocd/apps/quay/base
   - ../../../argocd/apps/kiali/overlays/stable
+  - ../../../argocd/apps/jaeger/overlays/stable
