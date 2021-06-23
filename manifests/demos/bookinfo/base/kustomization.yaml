@@ -6,4 +6,4 @@ resources:
   - smmr.yaml
   - bookinfo.yaml
   - bookinfo-gateway.yaml
-  - destination-rule-all.yaml
+  - destination-rules.yaml
