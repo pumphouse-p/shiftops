@@ -4,6 +4,6 @@ kind: Kustomization
 resources:
   - namespaces.yaml
   - smmr.yaml
-  - https://raw.githubusercontent.com/Maistra/istio/maistra-2.0/samples/bookinfo/platform/kube/bookinfo.yaml
-  - https://raw.githubusercontent.com/Maistra/istio/maistra-2.0/samples/bookinfo/networking/bookinfo-gateway.yaml
-  - https://raw.githubusercontent.com/Maistra/istio/maistra-2.0/samples/bookinfo/networking/destination-rule-all.yaml
+  - bookinfo.yaml
+  - bookinfo-gateway.yaml
+  - destination-rule-all.yaml
