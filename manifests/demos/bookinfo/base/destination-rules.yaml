@@ -32,6 +32,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
   name: ratings
+  namespace: bookinfo
 spec:
   host: ratings
   subsets:
@@ -43,6 +44,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
   name: details
+  namespace: bookinfo
 spec:
   host: details
   subsets:
