@@ -3,3 +3,5 @@ kind: NodeFeatureDiscovery
 metadata:
   name: nfd
   namespace: nfd
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
