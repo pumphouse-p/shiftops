@@ -3,12 +3,12 @@ kind: ServiceMonitor
 metadata:
   name: kuard-sm
   labels:
-    release: prometheus-kubeaddons
+    release: user-workload-monitoring
     app: kuard
 spec:
   namespaceSelector:
     matchNames:
-    - default
+    - kuard
   selector:
     matchLabels:
       app: kuard
