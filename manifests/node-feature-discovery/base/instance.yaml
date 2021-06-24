@@ -1,4 +1,4 @@
-apiVersion: nfd.kubernetes.io/v1
+apiVersion: nfd.openshift.io/v1
 kind: NodeFeatureDiscovery
 metadata:
   name: nfd
