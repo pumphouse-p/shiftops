@@ -17,3 +17,4 @@ bases:
   - ../../../argocd/apps/jaeger/overlays/stable
   - ../../../argocd/apps/ossm/overlays/stable
   - ../../../argocd/apps/smcp/base
+  - ../../../argocd/apps/node-feature-discovery/overlays/4.7

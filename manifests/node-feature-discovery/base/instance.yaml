@@ -1,0 +1,5 @@
+apiVersion: nfd.kubernetes.io/v1alpha1
+kind: NodeFeatureDiscovery
+metadata:
+  name: nfd
+  namespace: nfd
