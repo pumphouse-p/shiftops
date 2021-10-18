@@ -6,5 +6,5 @@ metadata:
 spec:
   channel: alpha
   name: sealed-secrets-operator-helm
-  source: sealed-secrets-catalog
+  source: community-operators
   sourceNamespace: openshift-marketplace
