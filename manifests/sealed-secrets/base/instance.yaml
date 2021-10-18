@@ -5,3 +5,6 @@ metadata:
   namespace: sealed-secrets
 spec:
   secretName: sealed-secret-key
+  template:
+    spec:
+      securityContext: {}
