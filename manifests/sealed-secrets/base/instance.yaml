@@ -1,7 +1,7 @@
 apiVersion: bitnami.com/v1alpha1
 kind: SealedSecretController
 metadata:
-  name: SealedSecretController
+  name: instance
   namespace: sealed-secrets
 spec:
   secretName: sealed-secret-key
