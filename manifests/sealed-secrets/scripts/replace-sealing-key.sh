@@ -26,7 +26,7 @@ if [ ! -f $PUBKEY ]; then
     exit 1
 fi
 
-SECRET_NAME="ss-$(date +%Y-%m-%d)"
+SECRET_NAME="sealed-secret-key"
 kubectl create namespace ${NS}
 kubectl -n "${NS}" create secret tls "${SECRET_NAME}" --cert="${PUBKEY}" --key="${PRIVKEY}"
 kubectl -n "${NS}" label secret "${SECRET_NAME}" sealedsecrets.bitnami.com/sealed-secrets-key=active
