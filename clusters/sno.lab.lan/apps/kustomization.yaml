@@ -5,4 +5,4 @@ namespace: openshift-gitops
 
 bases:
   - ../../../argocd/apps/pipelines/base
-  - ../../../argocd/apps/sealed-secrets/base
+  # - ../../../argocd/apps/sealed-secrets/base
