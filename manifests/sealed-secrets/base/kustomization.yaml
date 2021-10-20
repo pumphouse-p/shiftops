@@ -3,4 +3,4 @@ kind: Kustomization
 
 resources:
   - namespace.yaml
-  - https://github.com/redhat-cop/gitops-catalog/catalog/sealed-secrets-operator/overlays/default
+  - https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.16.0/controller.yaml
