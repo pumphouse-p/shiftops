@@ -28,5 +28,7 @@ fi
 
 SECRET_NAME="sealed-secret-key"
 kubectl create namespace ${NS}
+kubectl -n "${NS}" delete secret -l sealedsecrets.bitnami.com/sealed-secrets-key
 kubectl -n "${NS}" create secret tls "${SECRET_NAME}" --cert="${PUBKEY}" --key="${PRIVKEY}"
 kubectl -n "${NS}" label secret "${SECRET_NAME}" sealedsecrets.bitnami.com/sealed-secrets-key=active
+kubectl -n "${NS}" delete po -l name=sealed-secrets-controller
