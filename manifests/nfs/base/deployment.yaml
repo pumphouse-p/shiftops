@@ -26,11 +26,11 @@ spec:
             - name: PROVISIONER_NAME
               value: k8s-sigs.io/nfs-subdir-external-provisioner
             - name: NFS_SERVER
-              value: nfs-lab.lan
+              value: nas.lab.lan
             - name: NFS_PATH
               value: /var/nfs
       volumes:
         - name: nfs-client-root
           nfs:
-            server: nfs.lab.lan
+            server: nas.lab.lan
             path: /var/nfs
