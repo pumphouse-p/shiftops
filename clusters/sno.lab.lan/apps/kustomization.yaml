@@ -4,6 +4,7 @@ kind: Kustomization
 namespace: openshift-gitops
 
 bases:
+  - ../../../argocd/apps/nfs/base
   - ../../../argocd/apps/pipelines/base
   - ../../../argocd/apps/sealed-secrets/overlays/default
   - ../../../argocd/apps/acm/overlays/2.3
