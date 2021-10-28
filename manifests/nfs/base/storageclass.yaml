@@ -6,5 +6,5 @@ metadata:
     storageclass.kubernetes.io/is-default-class: "true"
 provisioner: k8s-sigs.io/nfs-subdir-external-provisioner
 parameters:
-  pathPattern: "${.PVC.namespace}/${.PVC.name}"
+  pathPattern: "${.PVC.namespace}__${.PVC.name}"
   onDelete: delete
