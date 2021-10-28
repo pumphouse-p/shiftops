@@ -28,9 +28,9 @@ spec:
             - name: NFS_SERVER
               value: nas.lab.lan
             - name: NFS_PATH
-              value: /srv/storage
+              value: /appdata
       volumes:
         - name: nfs-client-root
           nfs:
             server: nas.lab.lan
-            path: /srv/storage
+            path: /appdata
