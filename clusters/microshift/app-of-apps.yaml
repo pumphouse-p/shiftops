@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: cluster-config
-  namespace: argo
+  namespace: openshift-gitops
   labels:
     gitops.ownedBy: cluster-config
 spec:
